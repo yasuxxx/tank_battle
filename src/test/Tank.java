@@ -1,8 +1,12 @@
 package test;
-
+/*
+* 坦克类：主要包含坦克的属性和方法
+*
+* */
 import java.awt.*;
 
 public class Tank {
+//    坦克的位置坐标,方向,速度,是否移动
     private int x,y;
     private Dir dir;
     private static final int SPEED = 10;
@@ -25,11 +29,11 @@ public class Tank {
     public void setDir(Dir dir) {
         this.dir = dir;
     }
-
+//坦克的显示
     public void paint(Graphics g) {
         g.fillRect(x,y,40,40);
     }
-
+//坦克移动
     public void move() {
         if(!moving) return;
         switch (dir){

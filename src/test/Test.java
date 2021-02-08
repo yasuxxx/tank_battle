@@ -9,6 +9,7 @@ public class Test {
         TankFrame tf = new TankFrame();
         while(true){
             Thread.sleep(50);
+//           不断调用repaint()来触发主窗口paint函数
             tf.repaint();
         }
     }
