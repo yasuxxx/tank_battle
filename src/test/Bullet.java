@@ -1,42 +1,27 @@
 package test;
-/*
-* 坦克类：主要包含坦克的属性和方法
+/* 子弹类
+   子弹坐标，大小，速度
 *
 * */
 import java.awt.*;
 
-public class Tank {
-//    坦克的位置坐标,方向,速度,是否移动
+public class Bullet {
     private int x,y;
     private Dir dir;
-    private static final int SPEED = 10;
-    private boolean moving;
+    private static final int SPEED = 2;
+    private static final int WIDTH = 30,HEIGHT = 30;
 
-    public void setMoving(boolean moving) {
-        this.moving = moving;
-    }
-
-    public Tank(int x, int y, Dir dir) {
+    public Bullet(int x, int y, Dir dir) {
         this.x = x;
         this.y = y;
         this.dir = dir;
     }
-
-    public Dir getDir() {
-        return dir;
-    }
-
-    public void setDir(Dir dir) {
-        this.dir = dir;
-    }
-//坦克的显示
     public void paint(Graphics g) {
-        g.fillRect(x,y,40,40);
+        g.setColor(Color.RED);
+        g.fillOval(x,y,WIDTH,HEIGHT);
         move();
     }
-//坦克移动
     public void move() {
-        if(!moving) return;
         switch (dir){
             case LEFT:x-=SPEED;break;
             case RIGTH:x+=SPEED;break;

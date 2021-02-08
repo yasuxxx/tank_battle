@@ -11,6 +11,7 @@ import java.awt.event.*;
 
 public class TankFrame extends Frame {
     Tank mytank = new Tank(200,300,Dir.DOWN);
+    Bullet bullet = new Bullet(300,300,Dir.DOWN);
 //    坦克大战主窗口
     public TankFrame(){
         setSize(800,600);
@@ -29,7 +30,10 @@ public class TankFrame extends Frame {
     @Override
     public void paint(Graphics g){
         mytank.paint(g);
-        mytank.move();
+        //mytank.move();
+//       子弹类
+        bullet.paint(g);
+        //bullet.move();
     }
 //    设置键盘监听，主要监听八方向的键盘事件，然后设置坦克的方向属性
     class MyKeyListener extends KeyAdapter {
