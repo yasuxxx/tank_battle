@@ -22,7 +22,6 @@ public class TankFrame extends Frame {
     public void paint(Graphics g){
         mytank.paint(g);
         mytank.move();
-
     }
     class MyKeyListener extends KeyAdapter {
         boolean BL = false,BR = false,BU = false,BD = false;
